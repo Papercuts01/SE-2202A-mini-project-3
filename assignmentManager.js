@@ -17,6 +17,7 @@ class Assignment {
         }
     }
 
+
     // Returns true if assignment already has a grade
     hasGrade() {
         return typeof this._grade === "number";
@@ -132,15 +133,6 @@ class Student {
             this._notifyStatus(a);
         }
     }
-
-    // Returns pass/fail or "Hasn't been assigned"
-    getAssignmentStatus(name) {
-        const a = this._findAssignment(name);
-        if (!a) return "Hasn't been assigned";
-        if (a.hasGrade()) return a.getNumericGrade() > 50 ? "Pass" : "Fail";
-        return "Hasn't been assigned";
-    }
-
     // Returns average numeric grade
     getGrade() {
         this._updateOverallGrade();
